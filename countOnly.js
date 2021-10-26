@@ -1,17 +1,17 @@
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
   const message = actual === expected ? `✅✅✅ Assertion Passed: ${actual} === ${expected}` : `❌❌❌ Assertion Failed: ${actual} !== ${expected}`;
   console.log(message);
 };
 
-const countOnly = function (allItems, itemsToCount) {
+const countOnly = function(allItems, itemsToCount) {
   const results = {};
 
   for (const item of allItems) {
-    if (itemsToCount[item]) results[item] = results[item] + 1 || 1
+    if (itemsToCount[item]) results[item] = results[item] + 1 || 1;
   }
 
   return results;
-}
+};
 
 const firstNames = [
   "Karl",
