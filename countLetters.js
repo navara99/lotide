@@ -11,5 +11,5 @@ const countLetters = (str) => {
   return letters;
 };
 
-console.log(assertEqual(countLetters("lighthouse in the house")["h"], 4));
-console.log(assertEqual(countLetters("Joe waited for the train. The train was late.")["e"], 5));
+assertEqual(countLetters("lighthouse in the house")["h"], 4);
+assertEqual(countLetters("Joe waited for the train. The train was late.")["e"], 5);
