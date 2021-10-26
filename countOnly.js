@@ -3,11 +3,11 @@ const assertEqual = function (actual, expected) {
   console.log(message);
 };
 
-const countOnly = function(allItems,itemsToCount){
+const countOnly = function (allItems, itemsToCount) {
   const results = {};
 
   for (const item of allItems) {
-    console.log(item)
+    results[item] = results[item] + 1 || 1
   }
 
   return results;
