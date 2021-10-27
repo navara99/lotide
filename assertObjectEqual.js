@@ -1,4 +1,4 @@
-const eqArrays = function(arr1, arr2) {
+const eqArrays = function (arr1, arr2) {
   return arr1.length !== arr2.length ? false : arr1.every((elem, i) => elem === arr2[i]);
 };
 
@@ -22,13 +22,16 @@ const eqObjects = function (object1, object2) {
 };
 
 const logMessage = (isEqual, obj1, obj2) => {
-  const message = isEqual ? `✅✅✅ Assertion Passed: ${obj1} === ${obj2}` : `❌❌❌ Assertion Failed: ${obj1} !== ${obj2}`;
+  const inspect = require("util").inspect;
+  const message = isEqual ?
+    `✅✅✅ Assertion Passed: ${inspect(obj1)} === ${inspect(obj2)}` :
+    `❌❌❌ Assertion Failed: ${inspect(obj1)} !== ${inspect(obj2)}`;
   console.log(message);
 };
 
 const assertObjectsEqual = function (actual, expected) {
   const isEqual = eqObjects(actual, expected);
-  logMessage(isEqual , actual, expected);
+  logMessage(isEqual, actual, expected);
 }
 
 const ab = { a: "1", b: "2" };
