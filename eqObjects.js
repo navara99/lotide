@@ -5,7 +5,13 @@ const assertEqual = function (actual, expected) {
 };
 
 const eqObjects = function (object1, object2) {
+  const obj1Length = Object.keys(object1);
+  const obj2Length = Object.keys(object2);
+
+  if (obj1Length !== obj2Length) return false;
+
   
+
 }
 
 const ab = { a: "1", b: "2" };
