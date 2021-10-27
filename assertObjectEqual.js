@@ -23,7 +23,8 @@ const logMessage = (isEqual, arr1, arr2) => {
 };
 
 const assertObjectsEqual = function(actual,expected) {
-  
+  const isEqual = eqObjects(actual,expected);
+  logMessage(isEqual);
 }
 
 // const ab = { a: "1", b: "2" };
