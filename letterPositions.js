@@ -12,10 +12,8 @@ const assertArraysEqual = function(arr1, arr2) {
   logMessage(isEqual, arr1, arr2);
 };
 
-const letterPositions = function(sentence) {
+const addIndexToArr = (noSpaceStr)=> {
   const results = {};
-  const noSpaceStr = sentence.toLowerCase().match(/[a-z]/g);
-  console.log(noSpaceStr);
   noSpaceStr.forEach((char, i) => {
     if (results[char]) {
       results[char] = [...results[char], i];
@@ -24,6 +22,12 @@ const letterPositions = function(sentence) {
     }
   });
   return results;
+}
+
+const letterPositions = function(sentence) {
+  const noSpaceStr = sentence.toLowerCase().match(/[a-z]/g);
+  const finalResult = addIndexToArr(noSpaceStr);
+  return finalResult;
 };
 
 const test1Answer = {
