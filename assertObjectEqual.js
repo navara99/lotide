@@ -21,26 +21,26 @@ const eqObjects = function (object1, object2) {
   return keyValuesEqual(object1, object2, obj1Keys);
 };
 
-const logMessage = (isEqual, arr1, arr2) => {
-  const message = isEqual ? `✅✅✅ Assertion Passed: ${arr1} === ${arr2}` : `❌❌❌ Assertion Failed: ${arr1} !== ${arr2}`;
+const logMessage = (isEqual, obj1, obj2) => {
+  const message = isEqual ? `✅✅✅ Assertion Passed: ${obj1} === ${obj2}` : `❌❌❌ Assertion Failed: ${obj1} !== ${obj2}`;
   console.log(message);
 };
 
 const assertObjectsEqual = function (actual, expected) {
   const isEqual = eqObjects(actual, expected);
-  logMessage(isEqual);
+  logMessage(isEqual , actual, expected);
 }
 
-// const ab = { a: "1", b: "2" };
-// const ba = { b: "2", a: "1" };
-// assertObjectsEqual(ab, ba);
+const ab = { a: "1", b: "2" };
+const ba = { b: "2", a: "1" };
+assertObjectsEqual(ab, ba);
 
-// const abc = { a: "1", b: "2", c: "3" };
-// assertObjectsEqual(ab, abc);
+const abc = { a: "1", b: "2", c: "3" };
+assertObjectsEqual(ab, abc);
 
-// const cd = { c: "1", d: ["2", 3] };
-// const dc = { d: ["2", 3], c: "1" };
-// assertObjectsEqual(cd, dc);
+const cd = { c: "1", d: ["2", 3] };
+const dc = { d: ["2", 3], c: "1" };
+assertObjectsEqual(cd, dc);
 
-// const cd2 = { c: "1", d: ["2", 3, 4] };
-// assertObjectsEqual(cd, cd2);
+const cd2 = { c: "1", d: ["2", 3, 4] };
+assertObjectsEqual(cd, cd2);
