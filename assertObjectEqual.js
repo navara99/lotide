@@ -1,4 +1,4 @@
-const eqArrays = function (arr1, arr2) {
+const eqArrays = function(arr1, arr2) {
   return arr1.length !== arr2.length ? false : arr1.every((elem, i) => elem === arr2[i]);
 };
 
@@ -12,7 +12,7 @@ const keyValuesEqual = (object1, object2, obj1Keys) => {
   });
 };
 
-const eqObjects = function (object1, object2) {
+const eqObjects = function(object1, object2) {
   const obj1Keys = Object.keys(object1);
   const obj2Keys = Object.keys(object2);
   const obj1Length = obj1Keys.length;
@@ -29,10 +29,10 @@ const logMessage = (isEqual, obj1, obj2) => {
   console.log(message);
 };
 
-const assertObjectsEqual = function (actual, expected) {
+const assertObjectsEqual = function(actual, expected) {
   const isEqual = eqObjects(actual, expected);
   logMessage(isEqual, actual, expected);
-}
+};
 
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
