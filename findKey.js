@@ -1,21 +1,24 @@
-const assertEqual = function(actual, expected) {
+const assertEqual = function (actual, expected) {
   const message = actual === expected ?
     `✅✅✅ Assertion Passed: ${actual} === ${expected}` : `❌❌❌ Assertion Failed: ${actual} !== ${expected}`;
   console.log(message);
 };
 
-const findKey = function(){
-
+const findKey = function (data, callback) {
+  for (const key in data) {
+    const result = callback(data[key])
+    if (result) return key
+  }
 };
 
 const test1Data = {
   "Blue Hill": { stars: 1 },
-  "Akaleri":   { stars: 3 },
-  "noma":      { stars: 2 },
-  "elBulli":   { stars: 3 },
-  "Ora":       { stars: 2 },
-  "Akelarre":  { stars: 3 }
+  "Akaleri": { stars: 3 },
+  "noma": { stars: 2 },
+  "elBulli": { stars: 3 },
+  "Ora": { stars: 2 },
+  "Akelarre": { stars: 3 }
 }
 
-const results1 = findKey(test1Data , x => x.stars === 2 )
-assertEqual(results1 , "Ora" )
+const results1 = findKey(test1Data, x => x.stars === 2)
+assertEqual(results1, "noma")
