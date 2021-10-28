@@ -22,3 +22,9 @@ const test1Data = {
 
 const results1 = findKey(test1Data, x => x.stars === 2)
 assertEqual(results1, "noma")
+
+const results2 = findKey(test1Data, x => x.stars === 3)
+assertEqual(results2, "Akaleri")
+
+const results3 = findKey(test1Data, x => x.stars === 1)
+assertEqual(results3, "Blue Hill")
