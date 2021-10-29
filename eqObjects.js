@@ -1,10 +1,10 @@
-const assertEqual = function(actual, expected) {
+const assertEqual = function (actual, expected) {
   const message = actual === expected ?
     `✅✅✅ Assertion Passed: ${actual} === ${expected}` : `❌❌❌ Assertion Failed: ${actual} !== ${expected}`;
   console.log(message);
 };
 
-const eqArrays = function(arr1, arr2) {
+const eqArrays = function (arr1, arr2) {
   return arr1.length !== arr2.length ? false : arr1.every((elem, i) => elem === arr2[i]);
 };
 
@@ -18,7 +18,7 @@ const keyValuesEqual = (object1, object2, obj1Keys) => {
   });
 };
 
-const eqObjects = function(object1, object2) {
+const eqObjects = function (object1, object2) {
   const obj1Keys = Object.keys(object1);
   const obj2Keys = Object.keys(object2);
   const obj1Length = obj1Keys.length;
@@ -42,3 +42,7 @@ assertEqual(eqObjects(cd, dc), true);
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
 assertEqual(eqObjects(cd, cd2), false);
+
+assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true) // => true
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false) // => false
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false) // => false
