@@ -1,4 +1,4 @@
-const assertEqual = function (actual, expected) {
+const assertEqual = function(actual, expected) {
   const message = actual === expected ?
     `✅✅✅ Assertion Passed: ${actual} === ${expected}` : `❌❌❌ Assertion Failed: ${actual} !== ${expected}`;
   console.log(message);
@@ -20,7 +20,7 @@ const recursiveArrEq = (arr1, arr2) => {
   return isEqual;
 };
 
-const eqArrays = function (arr1, arr2) {
+const eqArrays = function(arr1, arr2) {
   return arr1.length !== arr2.length ? false : recursiveArrEq(arr1, arr2);
 };
 
