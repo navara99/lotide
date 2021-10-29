@@ -41,7 +41,7 @@ const eqObjects = function(object1, object2) {
     if (bothArr && bothSameLength) {
       return eqArrays(object1[key], object2[key]);
     } else if (bothObjects && bothSameLength) {
-      return eqObjects(object1[key], object2[key], obj1Keys, obj1Length, obj2Length);
+      return eqObjects(object1[key], object2[key]);
     } else {
       return object1[key] === object2[key];
     }
