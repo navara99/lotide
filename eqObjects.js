@@ -4,18 +4,24 @@ const assertEqual = function (actual, expected) {
   console.log(message);
 };
 
-const eqArrays = function (arr1, arr2) {
-  return arr1.length !== arr2.length ? false : arr1.every((elem, i) => elem === arr2[i]);
-};
+const recursiveArrEq = (arr1, arr2) => {
+  let isEqual = true;
 
-const keyValuesEqual = (object1, object2, obj1Keys) => {
-  return obj1Keys.every((key) => {
-    if (Array.isArray(object1[key])) {
-      return eqArrays(object1[key], object2[key]);
+  arr1.forEach((elem, i) => {
+    const bothArr = Array.isArray(elem) && Array.isArray(arr2[i]);
+    const bothSameLength = elem.length === arr2[i].length;
+    if (bothArr && bothSameLength) {
+      isEqual = recursiveArrEq(elem, arr2[i]);
     } else {
-      return object1[key] === object2[key];
+      isEqual = elem === arr2[i];
     }
   });
+
+  return isEqual;
+};
+
+const eqArrays = function (arr1, arr2) {
+  return arr1.length !== arr2.length ? false : recursiveArrEq(arr1, arr2);
 };
 
 const eqObjects = function (object1, object2) {
@@ -26,7 +32,22 @@ const eqObjects = function (object1, object2) {
 
   if (obj1Length !== obj2Length) return false;
 
-  return keyValuesEqual(object1, object2, obj1Keys);
+  let isEqual = true;
+
+  isEqual = obj1Keys.every((key) => {
+    const bothArr = Array.isArray(object1[key]) && Array.isArray(object2[key]);
+    const bothSameLength = obj1Length === obj2Length;
+    const bothObjects = typeof object1[key] === "object" && typeof object2[key] === "object";
+    if (bothArr && bothSameLength) {
+      return eqArrays(object1[key], object2[key]);
+    } else if (bothObjects && bothSameLength) {
+      return eqObjects(object1[key], object2[key], obj1Keys, obj1Length, obj2Length)
+    } else {
+      return object1[key] === object2[key];
+    }
+  });
+
+  return isEqual;
 };
 
 const ab = { a: "1", b: "2" };
@@ -43,6 +64,6 @@ assertEqual(eqObjects(cd, dc), true);
 const cd2 = { c: "1", d: ["2", 3, 4] };
 assertEqual(eqObjects(cd, cd2), false);
 
-assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true) // => true
-assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false) // => false
-assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false) // => false
+assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true)
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false)
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false)
