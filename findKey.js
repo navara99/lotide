@@ -1,8 +1,4 @@
-const assertEqual = function(actual, expected) {
-  const message = actual === expected ?
-    `✅✅✅ Assertion Passed: ${actual} === ${expected}` : `❌❌❌ Assertion Failed: ${actual} !== ${expected}`;
-  console.log(message);
-};
+const assertEqual = require("./assertEqual");
 
 const findKey = function(data, callback) {
   for (const key in data) {

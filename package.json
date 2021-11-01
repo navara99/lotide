@@ -1,0 +1,26 @@
+{
+  "name": "lotide",
+  "version": "1.0.0",
+  "description": "This is a smaller and simpler version of the Lotide library.",
+  "main": "assertArraysEqual.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/navara99/lotide.git"
+  },
+  "author": "Tharsikan Navaratnam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/navara99/lotide/issues"
+  },
+  "homepage": "https://github.com/navara99/lotide#readme",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.1.3"
+  }
+}
