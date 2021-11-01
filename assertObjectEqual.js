@@ -1,24 +1,5 @@
-const eqArrays = require("./eqArrays");
+const eqObjects = require("./eqObjects");
 const inspect = require("util").inspect;
-
-const keyValuesEqual = (object1, object2, obj1Keys) => {
-  return obj1Keys.every((key) => {
-    if (Array.isArray(object1[key])) {
-      return eqArrays(object1[key], object2[key]);
-    } else {
-      return object1[key] === object2[key];
-    }
-  });
-};
-
-const eqObjects = function(object1, object2) {
-  const obj1Keys = Object.keys(object1);
-  const obj2Keys = Object.keys(object2);
-  const obj1Length = obj1Keys.length;
-  const obj2Length = obj2Keys.length;
-  if (obj1Length !== obj2Length) return false;
-  return keyValuesEqual(object1, object2, obj1Keys);
-};
 
 const logMessage = (isEqual, obj1, obj2) => {
   const message = isEqual ?
