@@ -1,4 +1,4 @@
-const assertArraysEqual = require("./assertArraysEqual");
+// const assertArraysEqual = require("./assertArraysEqual");
 
 const addIndexToArr = (noSpaceStr)=> {
   const results = {};
@@ -18,16 +18,16 @@ const letterPositions = function(sentence) {
   return finalResult;
 };
 
-const test1Answer = {
-  h: [0],
-  e: [1],
-  l: [2, 3],
-  o: [4]
-};
+// const test1Answer = {
+//   h: [0],
+//   e: [1],
+//   l: [2, 3],
+//   o: [4]
+// };
 
-assertArraysEqual((letterPositions("hello")["h"]), test1Answer["h"]);
-assertArraysEqual((letterPositions("hello")["e"]), test1Answer["e"]);
-assertArraysEqual((letterPositions("hello")["l"]), test1Answer["l"]);
-assertArraysEqual((letterPositions("hello")["o"]), test1Answer["o"]);
+// assertArraysEqual((letterPositions("hello")["h"]), test1Answer["h"]);
+// assertArraysEqual((letterPositions("hello")["e"]), test1Answer["e"]);
+// assertArraysEqual((letterPositions("hello")["l"]), test1Answer["l"]);
+// assertArraysEqual((letterPositions("hello")["o"]), test1Answer["o"]);
 
 module.exports = letterPositions;

@@ -1,4 +1,4 @@
-const assertArraysEqual = require("./assertArraysEqual");
+// const assertArraysEqual = require("./assertArraysEqual");
 
 const flatten = function(arr) {
   const flattenedArr = [];
@@ -17,7 +17,7 @@ const flatten = function(arr) {
   return flattenedArr;
 };
 
-assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
+// assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
 
 // Explanation
 
@@ -29,8 +29,8 @@ assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
 // loop through the returned array and add items into the flattenedArr in the first call in the stack (flatten([1, 2, [3, 4], 5, [6]]))
 // Repeat until loop in initial function call ends, then return the total array
 
-assertArraysEqual(flatten([2, [3, 4, [5, 8]], 5, ["a"]]), [2, 3, 4, 5, 8, 5, "a"]);
-assertArraysEqual(flatten([]), []);
-assertArraysEqual(flatten([3]), [3]);
+// assertArraysEqual(flatten([2, [3, 4, [5, 8]], 5, ["a"]]), [2, 3, 4, 5, 8, 5, "a"]);
+// assertArraysEqual(flatten([]), []);
+// assertArraysEqual(flatten([3]), [3]);
 
 module.exports = flatten;
