@@ -6,7 +6,7 @@ describe("#eqArrays", () => {
     const result = eqArrays([[2, 3, [2, 3, [2, 3]]], [4]], [[2, 3, [2, 3, [2, 3]]], [4]]);
     expect(result).to.equal(true);
   });
-  it("should return true when nested arrays equal - [[[[[[[[[[[1, 2]]]], [1]]]]]]], [[5]]], [[[[[[[[[[[1, 2]]]], [1]]]]]]], [[5]]]", () => {
+  it("should return true when nested arrays are equal - [[[[[[[[[[[1, 2]]]], [1]]]]]]], [[5]]], [[[[[[[[[[[1, 2]]]], [1]]]]]]], [[5]]]", () => {
     const result = eqArrays([[[[[[[[[[[1, 2]]]], [1]]]]]]], [[5]]], [[[[[[[[[[[1, 2]]]], [1]]]]]]], [[5]]]);
     expect(result).to.equal(true);
   });
