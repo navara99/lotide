@@ -1,8 +1,5 @@
-const { assertObjectEqual } = require(".");
-
-const eqArrays = function(arr1, arr2) {
-  return arr1.length !== arr2.length ? false : arr1.every((elem, i) => elem === arr2[i]);
-};
+const eqArrays = require("./eqArrays");
+const inspect = require("util").inspect;
 
 const keyValuesEqual = (object1, object2, obj1Keys) => {
   return obj1Keys.every((key) => {
@@ -24,7 +21,6 @@ const eqObjects = function(object1, object2) {
 };
 
 const logMessage = (isEqual, obj1, obj2) => {
-  const inspect = require("util").inspect;
   const message = isEqual ?
     `✅✅✅ Assertion Passed: ${inspect(obj1)} === ${inspect(obj2)}` :
     `❌❌❌ Assertion Failed: ${inspect(obj1)} !== ${inspect(obj2)}`;
