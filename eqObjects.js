@@ -70,3 +70,5 @@ assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false);
 assertEqual(eqObjects({ a: { y: [1, 2, 3], z: 1 }, b: 2 }, { a: { y: [1, 2, 3], z: 1 }, b: 2 }), true);
 assertEqual(eqObjects({ a: { y: [1, 2, 3], z: [1, 4] }, b: 2 }, { a: { y: [1, 2, 3], z: [1, 3] }, b: 2 }), false);
 assertEqual(eqObjects({ a: { y: [0, 1, 2, 3, [1]], z: 1 }, b: 2 }, { a: { y: [0, 1, 2, 3, [1]], z: 1 }, b: 2 }), true);
+
+module.exports = eqObjects;

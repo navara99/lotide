@@ -22,7 +22,7 @@ const addIndexToArr = (noSpaceStr)=> {
     }
   });
   return results;
-}
+};
 
 const letterPositions = function(sentence) {
   const noSpaceStr = sentence.toLowerCase().match(/[a-z]/g);
@@ -41,3 +41,5 @@ assertArraysEqual((letterPositions("hello")["h"]), test1Answer["h"]);
 assertArraysEqual((letterPositions("hello")["e"]), test1Answer["e"]);
 assertArraysEqual((letterPositions("hello")["l"]), test1Answer["l"]);
 assertArraysEqual((letterPositions("hello")["o"]), test1Answer["o"]);
+
+module.exports = letterPositions;

@@ -36,3 +36,5 @@ const data3 = ["to", "building", "lasagna", "heart", "not", "give"];
 const results3 = takeUntil(data3, x => x.length === 3);
 assertArraysEqual(results3, ["to", "building", "lasagna", "heart"]);
 
+module.exports = takeUntil;
+

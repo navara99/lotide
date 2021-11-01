@@ -1,3 +1,5 @@
+const { assertObjectEqual } = require(".");
+
 const eqArrays = function(arr1, arr2) {
   return arr1.length !== arr2.length ? false : arr1.every((elem, i) => elem === arr2[i]);
 };
@@ -47,3 +49,5 @@ assertObjectsEqual(cd, dc);
 
 const cd2 = { c: "1", d: ["2", 3, 4] };
 assertObjectsEqual(cd, cd2);
+
+module.exports = assertObjectsEqual;

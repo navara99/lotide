@@ -13,3 +13,5 @@ const countLetters = (str) => {
 
 assertEqual(countLetters("lighthouse in the house")["h"], 4);
 assertEqual(countLetters("Joe waited for the train. The train was late.")["e"], 5);
+
+module.exports = countLetters;
