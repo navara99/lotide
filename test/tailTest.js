@@ -1,14 +1,12 @@
-const assertEqual = require("../assertEqual");
 const tail = require("../tail");
+const { expect } = require("chai");
 
-// Test Cases
+describe("#tail", () => {
+  it("should return '['Lighthouse', 'Labs']' for valid input '['Hello', 'Lighthouse', 'Labs']'", () => {
+    expect(tail(["Hello", "Lighthouse", "Labs"])).to.deep.equal(["Lighthouse", "Labs"]);
+  })
 
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words);
-assertEqual(words.length, 3);
-
-// Comparing values of returned tail arrays directly
-const result = tail(["Hello", "Lighthouse" , "Labs"]);
-assertEqual(result.length, 2);
-assertEqual(result[0], "Lighthouse");
-assertEqual(result[1], "Labs");
+  it("should return null if input is not an array", () => {
+    expect(tail(12)).to.equal(null);
+  })
+});
