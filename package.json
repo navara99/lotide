@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@thar.navaratnam/lotide",
   "version": "1.0.0",
-  "description": "This is a smaller and simpler version of the Lotide library.",
+  "description": "This is a smaller and simpler version of the Lodash library.",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
