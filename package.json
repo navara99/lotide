@@ -1,6 +1,6 @@
 {
   "name": "@thar.navaratnam/lotide",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This is a smaller and simpler version of the Lodash library.",
   "main": "index.js",
   "directories": {
