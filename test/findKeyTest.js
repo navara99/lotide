@@ -11,16 +11,19 @@ const testData = {
 };
 
 describe("#findKey",()=> {
+
   it("should return noma when input is object with callback  x => x.stars === 2",()=> {
     const result = findKey(testData, x => x.stars === 2);
     expect(result).to.equal("noma");
   });
+
   it("should return Akaleri when input is object with callback  x => x.stars === 3",()=> {
     const result = findKey(testData, x => x.stars === 3);
     expect(result).to.equal("Akaleri");
   });
+  
   it("should return undefined when input is object with callback  x => x.stars === 5",()=> {
     const result = findKey(testData, x => x.stars === 5);
     expect(result).to.equal(undefined);
   });
-})
+});

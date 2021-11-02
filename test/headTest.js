@@ -2,6 +2,7 @@ const head = require("../head");
 const { assert } = require("chai");
 
 describe("#head", () => {
+
   it("returns first element for a valid array", () => {
     assert.strictEqual(head([5, 6, 7]), 5);
   });
@@ -25,4 +26,5 @@ describe("#head", () => {
   it("returns null for a non array input", () => {
     assert.strictEqual(head("12"), null);
   });
+  
 });

@@ -2,6 +2,7 @@ const flatten = require("../flatten");
 const { expect } = require("chai");
 
 describe("#flatten", () => {
+  
   it("should flatten nested arrays - [2, [3, 4, [5, 8]], 5, ['a']]", () => {
     const result = flatten([2, [3, 4, [5, 8]], 5, ["a"]]);
     expect(result).to.deep.equal([2, 3, 4, 5, 8, 5, "a"]);
