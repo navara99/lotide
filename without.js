@@ -1,8 +1,6 @@
 // const assertArraysEqual = require("./assertArraysEqual");
 
-const without = (mainArr, removeArr) => {
-  mainArr.length ? mainArr.filter((elem) => !removeArr.includes(elem)) : [];
-};
+const without = (mainArr, removeArr) => mainArr.length ? mainArr.filter((elem) => !removeArr.includes(elem)) : [];
 
 // assertArraysEqual(without([1, 2, 3], [1]), [2, 3]); // => [2, 3]
 // assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]); // => ["1", "2"]
